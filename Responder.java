@@ -41,8 +41,11 @@ public class Responder
      */
     public String generateResponse(String usuarioInput)
     {
-        String respuestasUsuario = null;
-        respuestasUsuario = respuestasInput.get(usuarioInput);
-        return respuestas.get(aleatorio.nextInt(respuestas.size()));
+        String respuestasUsuario = respuestasInput.get(usuarioInput);
+        if (respuestasUsuario == null){
+            respuestasUsuario = respuestas.get(aleatorio.nextInt(respuestas.size()))  ;
+        }
+        
+        return respuestasUsuario;
     }
 }
